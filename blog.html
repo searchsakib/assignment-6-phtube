@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PH Tube</title>
+    <!--! Google Font links  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--! tailwind and daisyUI links -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--! Script for further customization -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .my-font {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body class="my-font">
+    <header></header>
+    <main class="max-w-[1320px] mx-auto">
+      <div>
+        <!-- Q:1 -->
+        <div class="mt-16 ml-5 mr-5 mb-5 p-5">
+          <h3 class="text-2xl font-bold pb-4">
+            <span class="">Q.1:</span> Discuss the scope of var, let, and const?
+          </h3>
+          <p class="text-lg leading-7 pb-4">
+            <span class="font-semibold underline mr-1">Answer:</span>
+            <span class="font-bold">var</span> is Function-scoped, hoisted to
+            the top of the function and can be redeclared and reassioned. <br />
+            <span class="font-bold">let</span> is block scoped, hoisted to the
+            top of the block and can be reassigned but not redeclared in the
+            same scope. <br />
+            <span class="font-bold">const</span> is block-scoped, hoisted to the
+            top of the block and cannot be reassigned after initial assignment,
+            but properties of objects and elements of arrays can be modified.
+          </p>
+        </div>
+        <!-- Q:2 -->
+        <div class="m-5 p-5">
+          <h3 class="text-2xl font-bold pb-4">
+            <span class="">Q.2:</span> Tell us the use cases of null and
+            undefined.
+          </h3>
+          <p class="text-lg leading-7 pb-4">
+            <span class="font-semibold underline mr-1">Answer:</span>
+            <span class="font-bold">undefined</span> typically represents the
+            absence or uninitialized state of a variable, often used when
+            something hasn't been defined or assigned.
+            <br />
+            <span class="font-bold">null</span> is used to intentionally
+            indicate the absence of a value, often used when you want to clear a
+            variable or property. <br />
+            <br />
+            In summary, <span class="font-bold">undefined</span> usually means
+            something wasn't defined or initialized, while
+            <span class="font-bold">null</span> signifies a deliberate absence
+            of a value.
+          </p>
+        </div>
+        <!-- Q:3 -->
+        <div class="m-5 p-5">
+          <h3 class="text-2xl font-bold pb-4">
+            <span class="">Q.3:</span> What do you mean by REST API?
+          </h3>
+          <p class="text-lg leading-7 pb-4">
+            <span class="font-semibold underline mr-1">Answer:</span>
+            <span class="font-bold">REST API</span> is a set of rules and
+            principles for building web services that allow different software
+            applications to communicate with each other over the internet. It
+            uses standard HTTP methods and URLs to perform operations on data,
+            making it a widely used and scalable approach for designing APIs.
+            REST APIs are known for their simplicity, statelessness, and
+            flexibility in handling various types of data.
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
