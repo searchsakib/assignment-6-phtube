@@ -6,13 +6,31 @@ const getCategory = async () => {
   // console.log(categoryData.data);
   categoryData.data.forEach((title) => {
     // console.log(title.category);
+    const cardContainer = document.getElementById('card-container');
     const category = document.getElementById('category');
     const categoryDiv = document.createElement('div');
     categoryDiv.innerHTML = `
     <button class='btn'>${title.category}</button>
     `;
     category.appendChild(categoryDiv);
+    categoryDiv.addEventListener('click', () => {
+      console.log(title.category);
+      if (title.category === 'All') {
+        cardContainer.innerHTML = '';
+        cardLoad(1000);
+      } else if (title.category === 'Music') {
+        cardContainer.innerHTML = '';
+        cardLoad(1001);
+      } else if (title.category === 'Comedy') {
+        cardContainer.innerHTML = '';
+        cardLoad(1003);
+      } else if (title.category === 'Drawing') {
+        cardContainer.innerHTML = '';
+        cardLoad(1005);
+      }
+    });
   });
+  // categoryData.data[0].category;
 };
 getCategory();
 
@@ -23,7 +41,7 @@ const cardLoad = async (id) => {
   const idData = await res.json();
   idData.data.forEach((item) => {
     // console.log(item);
-    console.log(item.authors[0]?.verified);
+    // console.log(item.authors[0]?.verified);
 
     // console.log(item.others.posted_date);
     // console.log(item.others.views.split('K')[0]);
@@ -83,6 +101,7 @@ const cardLoad = async (id) => {
   });
   // console.log(idData.data);
 };
+
 cardLoad(1000);
 
 const blogBtn = document.getElementById('blog-btn');
