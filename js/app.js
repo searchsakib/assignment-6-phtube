@@ -11,7 +11,7 @@ const getCategory = async () => {
     const drawingPage = document.getElementById('drawing-page');
     const categoryDiv = document.createElement('div');
     categoryDiv.innerHTML = `
-    <button class='btn'>${title.category}</button>
+    <button class='btn w-[102px] bg-[#25252526]'>${title.category}</button>
     `;
     category.appendChild(categoryDiv);
     categoryDiv.addEventListener('click', () => {
