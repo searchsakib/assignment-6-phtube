@@ -47,7 +47,7 @@ const cardLoad = async (id) => {
           <div class="card-body flex flex-row px-0 pt-5 pb-2">
             <div>
               <img
-                class="w-[40px] h-[40px] rounded-full blur-[6px]"
+                class="w-[40px] h-[40px] rounded-full blur-[5px] "
                 src=${item.authors[0].profile_picture}
                 alt=""
               />
