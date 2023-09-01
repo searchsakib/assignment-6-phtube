@@ -8,6 +8,7 @@ const getCategory = async () => {
     // console.log(title.category);
     const cardContainer = document.getElementById('card-container');
     const category = document.getElementById('category');
+    const drawingPage = document.getElementById('drawing-page');
     const categoryDiv = document.createElement('div');
     categoryDiv.innerHTML = `
     <button class='btn'>${title.category}</button>
@@ -17,16 +18,21 @@ const getCategory = async () => {
       console.log(title.category);
       if (title.category === 'All') {
         cardContainer.innerHTML = '';
+        drawingPage.innerHTML = '';
         cardLoad(1000);
       } else if (title.category === 'Music') {
         cardContainer.innerHTML = '';
+        drawingPage.innerHTML = '';
         cardLoad(1001);
       } else if (title.category === 'Comedy') {
         cardContainer.innerHTML = '';
+        drawingPage.innerHTML = '';
         cardLoad(1003);
       } else if (title.category === 'Drawing') {
         cardContainer.innerHTML = '';
-        cardLoad(1005);
+        drawingPage.innerHTML = '';
+        // cardLoad(1005);
+        drawingLoad();
       }
     });
   });
@@ -101,8 +107,20 @@ const cardLoad = async (id) => {
   });
   // console.log(idData.data);
 };
-
 cardLoad(1000);
+
+const drawingLoad = () => {
+  const drawingPage = document.getElementById('drawing-page');
+  const drawingDiv = document.createElement('div');
+  drawingDiv.innerHTML = `
+        <img class="mx-auto mb-6" src="./images/Icon.png" alt="icon" />
+          <h3 class="text-[32px] font-bold text-[#171717] text-center mb-10">
+            Oops!! Sorry, There is no <br />
+            content here
+          </h3>
+        `;
+  drawingPage.appendChild(drawingDiv);
+};
 
 const blogBtn = document.getElementById('blog-btn');
 blogBtn.addEventListener('click', function () {
