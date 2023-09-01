@@ -26,6 +26,7 @@ const cardLoad = async (id) => {
     console.log(item.authors[0]?.verified);
 
     // console.log(item.others.posted_date);
+    // console.log(item.others.views.split('K')[0]);
     // console.log(item.others.views);
     // console.log(item.thumbnail);
     // console.log(item.title);
