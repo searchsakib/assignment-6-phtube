@@ -113,6 +113,7 @@ const cardLoad = async (id) => {
         </div>
     `;
 
+    // for blue tick
     const verifySpan = div.querySelector('.verify');
     if (!item.authors[0]?.verified) {
       verifySpan.classList.add('hidden');
