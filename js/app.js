@@ -65,7 +65,7 @@ const cardLoad = async (id) => {
 
     const cardContainer = document.getElementById('card-container');
     const div = document.createElement('div');
-    console.log(div);
+    // console.log(div);
 
     div.innerHTML = `
     <!--card -->
