@@ -78,9 +78,9 @@ const cardLoad = async (id) => {
           )}hrs ${parseInt((item.others?.posted_date % 3600) / 60)}min ago</p>
           </div>
           <div class="card-body flex flex-row px-0 pt-5 pb-2">
-            <div>
+            <div class='h-[40px] overflow-hidden rounded-full'>
               <img
-                class="w-[40px] h-[40px] rounded-full blur-[5px] "
+                class="w-[40px] h-[40px] rounded-full blur-[6px] "
                 src=${item.authors[0].profile_picture}
                 alt=""
               />
