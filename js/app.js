@@ -47,7 +47,7 @@ const cardLoad = async (id) => {
   const idData = await res.json();
   idData.data.forEach((item) => {
     // console.log(item);
-    // console.log(item.authors[0]?.verified);
+    console.log(item.authors[0]?.verified);
 
     // console.log(item.others.posted_date);
     // console.log(item.others.views.split('K')[0]);
@@ -103,6 +103,13 @@ const cardLoad = async (id) => {
           </div>
         </div>
     `;
+    const verifySpan = div.querySelector('.verify');
+    if (item.authors[0]?.verified === true) {
+      verifySpan.style.display = 'inline';
+    } else {
+      verifySpan.style.display = 'none';
+    }
+
     cardContainer.appendChild(div);
   });
   // console.log(idData.data);
