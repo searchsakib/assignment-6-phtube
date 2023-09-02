@@ -71,11 +71,9 @@ const cardLoad = async (id) => {
             />
           </figure>
           <div class=' text-white  text-right mt-[-35px] mr-3'>
-          <p class='text-[10px] bg-[#171717] inline p-1 rounded-sm'>${Math.round(
-            parseFloat(item.others.posted_date / 3600)
-          )}hrs ${Math.round(
-      parseFloat(item.others.posted_date % 60)
-    )}min ago</p>
+          <p class='text-[10px] bg-[#171717] inline p-1 rounded-sm'>${parseInt(
+            item.others.posted_date / 3600
+          )}hrs ${parseInt((item.others.posted_date % 3600) / 60)}min ago</p>
           </div>
           <div class="card-body flex flex-row px-0 pt-5 pb-2">
             <div>
