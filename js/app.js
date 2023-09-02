@@ -45,6 +45,11 @@ const cardLoad = async (id) => {
     `https://openapi.programming-hero.com/api/videos/category/${id}`
   );
   const idData = await res.json();
+  const theData = idData.data.sort(
+    (a, b) =>
+      parseFloat(b.others.views.split('K')[0]) -
+      parseFloat(a.others.views.split('K')[0])
+  );
 
   idData.data.forEach((item) => {
     // console.log(item);
