@@ -105,10 +105,8 @@ const cardLoad = async (id) => {
     `;
 
     const verifySpan = div.querySelector('.verify');
-    if (item.authors[0]?.verified) {
-      verifySpan.className = 'inline';
-    } else {
-      verifySpan.className = 'hidden';
+    if (!item.authors[0]?.verified) {
+      verifySpan.classList.add('hidden');
     }
 
     cardContainer.appendChild(div);
