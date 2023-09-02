@@ -45,11 +45,12 @@ const cardLoad = async (id) => {
     `https://openapi.programming-hero.com/api/videos/category/${id}`
   );
   const idData = await res.json();
+
   idData.data.forEach((item) => {
     // console.log(item);
     // console.log(item.authors[0]?.verified);
 
-    console.log(item.others.posted_date);
+    // console.log(item.others.posted_date);
     // console.log(item.others.views.split('K')[0]);
     // console.log(item.others.views);
     // console.log(item.thumbnail);
@@ -59,6 +60,7 @@ const cardLoad = async (id) => {
 
     const cardContainer = document.getElementById('card-container');
     const div = document.createElement('div');
+    console.log(div);
 
     div.innerHTML = `
     <!--card -->
@@ -70,10 +72,10 @@ const cardLoad = async (id) => {
               alt=${item.title}
             />
           </figure>
-          <div class=' text-white  text-right mt-[-35px] mr-3'>
+          <div class='text-white text-right mt-[-35px] mr-3 time-div'>
           <p class='text-[10px] bg-[#171717] inline p-1 rounded-sm'>${parseInt(
-            item.others.posted_date / 3600
-          )}hrs ${parseInt((item.others.posted_date % 3600) / 60)}min ago</p>
+            item.others?.posted_date / 3600
+          )}hrs ${parseInt((item.others?.posted_date % 3600) / 60)}min ago</p>
           </div>
           <div class="card-body flex flex-row px-0 pt-5 pb-2">
             <div>
@@ -116,8 +118,15 @@ const cardLoad = async (id) => {
       verifySpan.classList.add('hidden');
     }
 
+    // for time div
+    const timeDiv = div.querySelector('.time-div');
+    if (item.others.posted_date.length === 0) {
+      timeDiv.classList.add('hidden');
+    }
+
     cardContainer.appendChild(div);
   });
+
   // console.log(idData.data);
 };
 cardLoad(1000);
@@ -154,10 +163,3 @@ const blogBtn = document.getElementById('blog-btn');
 blogBtn.addEventListener('click', function () {
   window.location.href = 'blog.html';
 });
-
-//  const span = document.getElementById('span');
-//     if (item.authors[0]?.verified === true) {
-//       span.classList.remove('hidden');
-//     } else {
-//       span.classList.add('hidden');
-//     }
