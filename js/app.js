@@ -109,6 +109,21 @@ const cardLoad = async (id) => {
 };
 cardLoad(1000);
 
+//! sort card failed
+// const sortMethod = async (forId) => {
+//   const res = await fetch(
+//     `https://openapi.programming-hero.com/api/videos/category/${forId}`
+//   );
+//   const myData = await res.json();
+//   const theData = myData.data.toSorted(
+//     (a, b) =>
+//       parseFloat(b.others.views.split('K')[0]) -
+//       parseFloat(a.others.views.split('K')[0])
+//   );
+//   console.log(theData);
+// };
+// sortMethod(1000);
+
 const drawingLoad = () => {
   const drawingPage = document.getElementById('drawing-page');
   const drawingDiv = document.createElement('div');
