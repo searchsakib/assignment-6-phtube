@@ -49,7 +49,7 @@ const cardLoad = async (id) => {
     // console.log(item);
     // console.log(item.authors[0]?.verified);
 
-    // console.log(item.others.posted_date);
+    console.log(item.others.posted_date);
     // console.log(item.others.views.split('K')[0]);
     // console.log(item.others.views);
     // console.log(item.thumbnail);
@@ -70,6 +70,13 @@ const cardLoad = async (id) => {
               alt=${item.title}
             />
           </figure>
+          <div class=' text-white  text-right mt-[-35px] mr-3'>
+          <p class='text-[10px] bg-[#171717] inline p-1 rounded-sm'>${Math.round(
+            parseFloat(item.others.posted_date / 3600)
+          )}hrs ${Math.round(
+      parseFloat(item.others.posted_date % 60)
+    )}min ago</p>
+          </div>
           <div class="card-body flex flex-row px-0 pt-5 pb-2">
             <div>
               <img
@@ -82,7 +89,9 @@ const cardLoad = async (id) => {
               <h2 class="card-title text-[#171717] mb-2">
                 ${item.title}
               </h2>
-              <p class="text-[#171717B2]  inline mr-2">${item.authors[0].profile_name}</p>
+              <p class="text-[#171717B2]  inline mr-2">${
+                item.authors[0].profile_name
+              }</p>
               
               <span  class='verify'> 
               <svg class='inline' id='verify-svg' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
